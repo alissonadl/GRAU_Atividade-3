@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo uma cor de fundo e tipografia */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8e1; /* Amarelo claro */
+    color: #d32f2f; /* Vermelho */
+    line-height: 1.6;
+}
+
+/* Estilo do cabeçalho e navegação */
+nav {
+    background-color: #fbc02d; /* Amarelo dourado */
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: #d32f2f; /* Vermelho */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #f57c00; /* Laranja escuro */
+    color: white;
+}
+
+/* Estilo dos formulários */
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+    background-color: #fff3e0; /* Amarelo muito suave */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d32f2f;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form input[type="text"] {
+    background-color: #fff;
+}
+
+form button {
+    background-color: #d32f2f; /* Vermelho */
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form button:hover {
+    background-color: #c2185b; /* Vermelho mais escuro */
+}
+
+/* Estilo para o conteúdo central */
+h1, h2, h3 {
+    color: #d32f2f;
+    text-align: center;
+}
+
+p {
+    color: #333;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+button {
+    background-color: #d32f2f; /* Vermelho */
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+button:hover {
+    background-color: #c2185b; /* Vermelho mais escuro */
+    transform: scale(1.05); /* Efeito de leve aumento no tamanho */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.6); /* Foco com borda amarela suave */
+}
+
+button:active {
+    background-color: #f57c00; /* Laranja escuro para o estado ativo */
+    transform: scale(1); /* Retorna ao tamanho normal ao clicar */
+}
