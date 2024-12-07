@@ -52,3 +52,12 @@ def confirmar_pedido():
         molho = molho, queijo = queijo, ingrediente_1 = ingrediente_1, 
         ingrediente_2 = ingrediente_2, borda = borda, endereco = endereco)
 
+
+@app.route('/temas')
+def temas():
+    return render_template('temas.html')
+
+@app.route('/exibeotema', methods= ["post"])
+def exibeotema():
+    tipotema = request.form.get('tipotema')
+    return render_template('exibeotema.html', tipotema = tipotema)
