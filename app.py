@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -15,19 +16,20 @@ def calc_imc():
     altura = float(request.args.get("altura"))
     peso = float(request.args.get("peso"))
     imc = round((peso/altura**2),2)
+    
     mensagem = ""
 
     if (imc < 18.5):
-        mensagem = "Você está abaixo do peso."
+        mensagem = f"{nome} está abaixo do peso."
     
     elif (imc < 24.9):
-        mensagem = "Você está com o peso normal."
+        mensagem = f"{nome} está com o peso normal."
 
     elif (imc < 29.9):
-        mensagem = "Você está com sobrepeso."
+        mensagem = f"{nome} está com sobrepeso."
 
     else:
-        mensagem = "Você está obeso."
+        mensagem = f"{nome} está obeso."
 
     return render_template("calc_imc.html", mensagem = mensagem)
 
@@ -48,6 +50,8 @@ def confirmar_pedido():
     ingrediente_2 = request.form.get('ingrediente_2')
     borda = request.form.get('borda')
     endereco = request.form.get('endereco')
+    with open ("./static/txts/pedidos.txt","a") as pedidos:
+        pedidos.write(f"Pedido:\n-{massa}\n-{molho}\n-{queijo}\n-{ingrediente_1}\n-{borda}\n-{endereco}\n\n")
     return render_template("confirmar_pedido.html", massa = massa, 
         molho = molho, queijo = queijo, ingrediente_1 = ingrediente_1, 
         ingrediente_2 = ingrediente_2, borda = borda, endereco = endereco)
